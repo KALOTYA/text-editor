@@ -34,6 +34,11 @@ export const getDb = async () => {
   const tx = todosDb.transaction('jate','readonly');
   const store = tx.objectStore('jate');
   const request = store.getAll();
+
+  const result = await request;
+  result
+  console.log('result.value', result);
+  return result?.value;
 }
 
 initdb();
